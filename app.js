@@ -9,6 +9,16 @@ const argv = require('yargs')
             default: 10
         }
     })
+    .command('crear', 'Genera un archivo con la base de multiplicar ', {
+        base: {
+            demand: true,
+            alias: 'b'
+        },
+        limite: {
+            alias: 'l',
+            default: 10
+        }
+    })
     .argv;
 
 const { crearArchivo, listarTabla } = require('./multiplicar/multiplicar');
@@ -22,7 +32,7 @@ switch (comando) {
         break;
 
     case 'crear':
-        crearArchivo(argv.base)
+        crearArchivo(argv.base, argv.limite)
             .then(archivo => console.log(`Archivo creado: ${ archivo }`))
             .catch(e => console.log(e));
         break;

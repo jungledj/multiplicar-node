@@ -8,7 +8,7 @@ let listarTabla = (base, limite = 10) => {
 
 }
 
-let crearArchivo = (base) => {
+let crearArchivo = (base, limite = 10) => {
 
     return new Promise((resolve, reject) => {
 
@@ -19,15 +19,15 @@ let crearArchivo = (base) => {
 
         let data = '';
 
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= limite; i++) {
             data += `${ base } * ${ i } = ${ base * i }\n`;
         }
 
-        fs.writeFile(`tablas/tabla-${ base }.txt`, data, (err) => {
+        fs.writeFile(`tablas/tabla-${ base }-al-${ limite }.txt`, data, (err) => {
             if (err)
                 reject(err)
             else
-                resolve(`tabla-${ base}.txt`);
+                resolve(`tabla-${ base}-al-${ limite }.txt`);
         });
 
     })
