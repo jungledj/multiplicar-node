@@ -4,6 +4,10 @@ let crearArchivo = (base) => {
 
     return new Promise((resolve, reject) => {
 
+        if (!Number(base)) {
+            reject(`El valor introducido no es un número`);
+            return;
+        }
 
         let data = '';
 
