@@ -9,6 +9,7 @@
     "author": "Junglej DJ",
     "license": "ISC",
     "dependencies": {
+        "colors": "^1.3.3",
         "yargs": "^13.2.2"
     }
 }
